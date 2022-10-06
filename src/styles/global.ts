@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
 		textarea,
 		select,
 		button {
-			font-family: 'Roboto', sans-serif;
+			font-family: 'Open Sans', sans-serif;
 			font-size: 1rem;
 			font-weight: 400;
 		}

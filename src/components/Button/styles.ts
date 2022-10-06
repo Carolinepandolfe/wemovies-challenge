@@ -9,9 +9,9 @@ export const Button = styled.button`
 		border-radius: 0.5rem;
 		color: ${theme.white};
 		display: flex;
-		font-size: 1rem;
+		font-size: 0.75rem;
 		font-weight: 700;
-		height: 3.125rem;
+		height: 2.5rem;
 		justify-content: center;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
