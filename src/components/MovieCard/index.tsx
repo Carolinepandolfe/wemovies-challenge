@@ -1,19 +1,24 @@
 import Button from 'components/Button'
 
+import { formatCurrency } from 'utils/formatCurrency'
+
 import * as Styled from './styles'
 
-const MovieCard = () => {
+type MovieProps = {
+	image: string
+	title: string
+	price: number
+}
+
+const MovieCard = ({ image, price, title }: MovieProps) => {
 	return (
 		<Styled.Card>
 			<Styled.Movie>
-				<img
-					src="https://www.imagemhost.com.br/images/2022/07/10/shang-chi.png"
-					alt="Cartaz filme"
-				/>
-				<p>Nome do filme aqui</p>
+				<img src={image} alt={`Cartaz filme do ${title}`} />
+				<p>{title}</p>
 			</Styled.Movie>
 			<Styled.Price>
-				<span>R$ 30,99</span>
+				<span>{formatCurrency(price)}</span>
 				<Button>ADICIONAR AO CARRINHO</Button>
 			</Styled.Price>
 		</Styled.Card>

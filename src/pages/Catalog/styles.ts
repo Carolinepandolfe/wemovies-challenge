@@ -7,6 +7,7 @@ export const Container = styled.main`
 	flex-wrap: wrap;
 	gap: 10px;
 	justify-content: center;
+	padding-bottom: 53px;
 
 	@media (min-width: 600px) {
 		margin: 60px auto 0;
