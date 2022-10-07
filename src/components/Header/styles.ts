@@ -20,7 +20,7 @@ export const Header = styled.header`
 			font-weight: 700;
 		}
 
-		a {
+		a:last-of-type {
 			min-width: 100px;
 			width: auto;
 			justify-content: space-between;
@@ -28,11 +28,37 @@ export const Header = styled.header`
 			align-items: baseline;
 			border: none;
 			background-color: transparent;
+			gap: 10px;
+
+			div {
+				p {
+					display: none;
+				}
+			}
+
+			img {
+				align-self: flex-end;
+			}
 
 			span {
 				color: ${theme.gray};
 				font-size: 12px;
 				font-weight: 600;
+			}
+		}
+
+		@media (min-width: 745px) {
+			a:last-of-type div {
+				display: flex;
+				flex-direction: column;
+
+				p {
+					display: block;
+				}
+
+				span {
+					text-align: end;
+				}
 			}
 		}
 	`}

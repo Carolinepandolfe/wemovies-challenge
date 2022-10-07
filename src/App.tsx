@@ -2,6 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { ThemeProvider } from 'styled-components'
 
+import CartContextProvider from 'context/CartContext'
 import Routes from 'Routes'
 
 import Header from 'components/Header'
@@ -13,8 +14,10 @@ const App = () => {
 	return (
 		<ThemeProvider theme={defaultTheme}>
 			<BrowserRouter>
-				<Header quantity={230} />
-				<Routes />
+				<CartContextProvider>
+					<Header />
+					<Routes />
+				</CartContextProvider>
 			</BrowserRouter>
 			<GlobalStyle />
 		</ThemeProvider>

@@ -1,19 +1,21 @@
 import { Link } from 'react-router-dom'
 
+import useCart from 'hooks/useCart'
+
 import cartIcon from 'assets/cartIcon.png'
 
 import * as Styled from './styles'
 
-type QuantityProps = {
-	quantity: number
-}
-
-const Header = ({ quantity }: QuantityProps) => {
+const Header = () => {
+	const { movies } = useCart()
 	return (
 		<Styled.Header>
 			<Link to="/">WeMovies</Link>
 			<Link to="/meu-carrinho">
-				<span>{`${quantity} itens`}</span>
+				<div>
+					<p>Meu Carrinho</p>
+					<span>{`${movies?.length} itens`}</span>
+				</div>
 				<img src={cartIcon} alt="Carrinho de compras" />
 			</Link>
 		</Styled.Header>
