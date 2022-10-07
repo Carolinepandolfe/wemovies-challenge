@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import cartIcon from 'assets/cartIcon.png'
 
 import * as Styled from './styles'
@@ -9,7 +11,7 @@ type QuantityProps = {
 const Header = ({ quantity }: QuantityProps) => {
 	return (
 		<Styled.Header>
-			<h1>WeMovies</h1>
+			<Link to="/">WeMovies</Link>
 			<button type="button">
 				<span>{`${quantity} itens`}</span>
 				<img src={cartIcon} alt="Carrinho de compras" />

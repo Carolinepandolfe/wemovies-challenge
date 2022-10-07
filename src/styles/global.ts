@@ -30,6 +30,10 @@ const GlobalStyle = createGlobalStyle`
 			font-weight: 400;
 		}
 
+		a {
+			text-decoration: none;
+		}
+
 		button {
 			border: none;
 			cursor: pointer;

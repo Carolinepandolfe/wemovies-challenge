@@ -14,8 +14,10 @@ export const Header = styled.header`
 		position: sticky;
 		top: 0;
 
-		h1 {
+		a {
 			color: ${theme.white};
+			font-size: 20px;
+			font-weight: 700;
 		}
 
 		button {
@@ -29,6 +31,8 @@ export const Header = styled.header`
 
 			span {
 				color: ${theme.gray};
+				font-size: 12px;
+				font-weight: 600;
 			}
 		}
 	`}
