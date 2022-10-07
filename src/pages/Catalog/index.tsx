@@ -11,6 +11,7 @@ export type MovieProps = {
 	title: string
 	price: number
 	image: string
+	quantity: number
 }
 
 const Catalog = () => {
@@ -32,7 +33,7 @@ const Catalog = () => {
 	return (
 		<Styled.Container>
 			{movies?.map((movie) => (
-				<MovieCard {...movie} key={movie.id} />
+				<MovieCard {...movie} key={movie.id} quantity={3} />
 			))}
 		</Styled.Container>
 	)

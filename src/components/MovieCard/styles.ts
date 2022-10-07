@@ -39,6 +39,13 @@ export const Price = styled.div`
 	}
 
 	button {
+		display: flex;
+		justify-content: space-around;
 		margin-top: 7px;
+
+		div {
+			display: flex;
+			gap: 5px;
+		}
 	}
 `

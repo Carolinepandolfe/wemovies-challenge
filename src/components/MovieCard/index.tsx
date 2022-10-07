@@ -1,3 +1,5 @@
+import { MdAddShoppingCart } from 'react-icons/md'
+
 import Button from 'components/Button'
 
 import { formatCurrency } from 'utils/formatCurrency'
@@ -8,9 +10,10 @@ type MovieProps = {
 	image: string
 	title: string
 	price: number
+	quantity: number
 }
 
-const MovieCard = ({ image, price, title }: MovieProps) => {
+const MovieCard = ({ image, price, title, quantity }: MovieProps) => {
 	return (
 		<Styled.Card>
 			<Styled.Movie>
@@ -19,7 +22,13 @@ const MovieCard = ({ image, price, title }: MovieProps) => {
 			</Styled.Movie>
 			<Styled.Price>
 				<span>{formatCurrency(price)}</span>
-				<Button>ADICIONAR AO CARRINHO</Button>
+				<Button>
+					<div>
+						<MdAddShoppingCart size={15} />
+						{quantity}
+					</div>
+					ADICIONAR AO CARRINHO
+				</Button>
 			</Styled.Price>
 		</Styled.Card>
 	)
