@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components'
 
-import { darken } from 'polished'
-
 export const Button = styled.button`
 	${({ theme }) => css`
 		align-items: center;
@@ -16,18 +14,5 @@ export const Button = styled.button`
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
 		transition: background 0.2s ease-out;
-
-		&:hover {
-			background: ${darken(0.04, theme.blue)};
-		}
-
-		&:active {
-			background: ${darken(0.04, theme.blue)};
-		}
-
-		&:disabled {
-			background: ${darken(0.3, theme.blue)};
-			cursor: not-allowed;
-		}
 	`}
 `
