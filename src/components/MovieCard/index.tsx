@@ -10,10 +10,11 @@ type MovieProps = {
 	image: string
 	title: string
 	price: number
-	quantity: number
+	quantity: () => number
+	addMovie: () => void
 }
 
-const MovieCard = ({ image, price, title, quantity }: MovieProps) => {
+const MovieCard = ({ image, price, title, quantity, addMovie }: MovieProps) => {
 	return (
 		<Styled.Card>
 			<Styled.Movie>
@@ -22,10 +23,10 @@ const MovieCard = ({ image, price, title, quantity }: MovieProps) => {
 			</Styled.Movie>
 			<Styled.Price>
 				<span>{formatCurrency(price)}</span>
-				<Button>
+				<Button onClick={addMovie}>
 					<div>
 						<MdAddShoppingCart size={15} />
-						{quantity}
+						{quantity()}
 					</div>
 					ADICIONAR AO CARRINHO
 				</Button>
