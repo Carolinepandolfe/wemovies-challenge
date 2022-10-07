@@ -13,7 +13,7 @@ const App = () => {
 	return (
 		<ThemeProvider theme={defaultTheme}>
 			<BrowserRouter>
-				<Header />
+				<Header quantity={230} />
 				<Routes />
 			</BrowserRouter>
 			<GlobalStyle />

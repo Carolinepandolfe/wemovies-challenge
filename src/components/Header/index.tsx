@@ -2,14 +2,18 @@ import cartIcon from 'assets/cartIcon.png'
 
 import * as Styled from './styles'
 
-const Header = () => {
+type QuantityProps = {
+	quantity: number
+}
+
+const Header = ({ quantity }: QuantityProps) => {
 	return (
 		<Styled.Header>
 			<h1>WeMovies</h1>
-			<div>
-				<span>0 itens</span>
+			<button type="button">
+				<span>{`${quantity} itens`}</span>
 				<img src={cartIcon} alt="Carrinho de compras" />
-			</div>
+			</button>
 		</Styled.Header>
 	)
 }
