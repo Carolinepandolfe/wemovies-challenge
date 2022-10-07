@@ -20,7 +20,7 @@ export const Header = styled.header`
 			font-weight: 700;
 		}
 
-		button {
+		a {
 			min-width: 100px;
 			width: auto;
 			justify-content: space-between;

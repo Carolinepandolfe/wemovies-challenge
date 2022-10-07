@@ -12,10 +12,10 @@ const Header = ({ quantity }: QuantityProps) => {
 	return (
 		<Styled.Header>
 			<Link to="/">WeMovies</Link>
-			<button type="button">
+			<Link to="/meu-carrinho">
 				<span>{`${quantity} itens`}</span>
 				<img src={cartIcon} alt="Carrinho de compras" />
-			</button>
+			</Link>
 		</Styled.Header>
 	)
 }
