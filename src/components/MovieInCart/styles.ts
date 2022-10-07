@@ -27,6 +27,15 @@ export const Container = styled.main`
 export const Content = styled.div`
 	height: calc(100% - 120px);
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	overflow-y: scroll;
+	padding-right: 10px;
+
+	@media (min-width: 745px) {
+		max-height: 500px;
+	}
 `
 
 export const Card = styled.div`
@@ -64,7 +73,7 @@ export const InfoMovie = styled.div`
 
 	@media (min-width: 745px) {
 		flex-direction: row;
-		gap: 80px;
+		gap: 74px;
 	}
 `
 
@@ -73,6 +82,7 @@ export const Title = styled.div`
 	justify-content: space-between;
 	font-weight: 700;
 	font-size: 14px;
+	width: 120px;
 
 	@media (min-width: 745px) {
 		flex-direction: column;
@@ -111,7 +121,7 @@ export const Price = styled.div`
 		}
 
 		@media (min-width: 745px) {
-			gap: 80px;
+			gap: 130px;
 			div:last-of-type {
 				flex-direction: row;
 				align-items: center;
