@@ -98,15 +98,19 @@ const CartContextProvider = ({ children }: CartContextProviderProps) => {
 		0
 	)
 
-	const inputQuantity = useCallback(
-		(quantity: number, id: number) => {
-			const newMovie = movies.map((item) =>
-				item?.id === id ? { ...item, quantity } : item
-			)
-			setMovies(newMovie)
-		},
-		[movies]
-	)
+	const inputQuantity = useCallback((quantity: number, id: number) => {
+		setMovies((prevState) =>
+			prevState.map((item) => {
+				if (item.id === id) {
+					return {
+						...item,
+						quantity,
+					}
+				}
+				return item
+			})
+		)
+	}, [])
 
 	const clearCart = useCallback(() => {
 		setMovies([])
