@@ -61,13 +61,9 @@ const CartContextProvider = ({ children }: CartContextProviderProps) => {
 		[movies]
 	)
 
-	const removeMovie = useCallback(
-		(id: number) => {
-			const newMovie = movies.filter((item) => item.id !== id)
-			setMovies(newMovie)
-		},
-		[movies]
-	)
+	const removeMovie = useCallback((id: number) => {
+		setMovies((prevState) => prevState.filter((item) => item.id !== id))
+	}, [])
 
 	const incrementMovie = useCallback((id: number) => {
 		setMovies((prevState) =>
