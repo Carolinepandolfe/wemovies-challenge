@@ -67,25 +67,33 @@ const CartContextProvider = ({ children }: CartContextProviderProps) => {
 		[movies]
 	)
 
-	const incrementMovie = useCallback(
-		(id: number) => {
-			const newMovie = movies.map((item) =>
-				item?.id === id ? { ...item, quantity: item.quantity + 1 } : item
-			)
-			setMovies(newMovie)
-		},
-		[movies]
-	)
+	const incrementMovie = useCallback((id: number) => {
+		setMovies((prevState) =>
+			prevState.map((item) => {
+				if (item?.id === id) {
+					return {
+						...item,
+						quantity: item.quantity + 1,
+					}
+				}
+				return item
+			})
+		)
+	}, [])
 
-	const decrementMovie = useCallback(
-		(id: number) => {
-			const newMovie = movies.map((item) =>
-				item?.id === id ? { ...item, quantity: item.quantity + 1 } : item
-			)
-			setMovies(newMovie)
-		},
-		[movies]
-	)
+	const decrementMovie = useCallback((id: number) => {
+		setMovies((prevState) =>
+			prevState.map((item) => {
+				if (item?.id === id) {
+					return {
+						...item,
+						quantity: item.quantity - 1,
+					}
+				}
+				return item
+			})
+		)
+	}, [])
 
 	const totalPrice = movies.reduce(
 		(total, item) => total + item.price * item.quantity,
