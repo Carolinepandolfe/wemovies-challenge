@@ -29,7 +29,7 @@ const IncrementButton = ({
 
 	return (
 		<Styled.Increment>
-			<Button type="button" onClick={decrement}>
+			<Button type="button" onClick={decrement} disabled={quantity === 0}>
 				<RiSubtractFill />
 			</Button>
 			<Styled.Input

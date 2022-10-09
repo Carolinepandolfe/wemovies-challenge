@@ -13,6 +13,11 @@ export const Increment = styled.div`
 			border: 2px solid ${theme.blue};
 			background-color: transparent;
 
+			&:disabled {
+				opacity: 0.5;
+				cursor: not-allowed;
+			}
+
 			svg {
 				width: 100%;
 				height: 100%;
