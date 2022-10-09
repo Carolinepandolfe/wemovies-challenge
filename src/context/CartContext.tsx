@@ -42,20 +42,22 @@ const CartContextProvider = ({ children }: CartContextProviderProps) => {
 		(movie: MovieProps) => {
 			const existsMovie = movies.find((item) => item.id === movie.id)
 			if (existsMovie) {
-				const updateMovie = movies.map((item) =>
-					item.id === movie.id
-						? {
+				setMovies((prevState) =>
+					prevState.map((item) => {
+						if (item.id === movie.id) {
+							return {
 								...item,
 								quantity: item.quantity + 1,
-						  }
-						: item
+							}
+						}
+						return item
+					})
 				)
-				setMovies(updateMovie)
 			} else {
-				const newMovie = [...movies, movie]
-				setMovies(newMovie)
+				setMovies((prevState) => [...prevState, movie])
 			}
 		},
+
 		[movies]
 	)
 
